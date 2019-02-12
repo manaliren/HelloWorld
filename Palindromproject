@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Palindrom
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Program.IsPalindrome("pop"));
+        }
+
+        public static bool IsPalindrome(string value)
+        {
+            int i = 0;
+            int j = value.Length - 1;
+            while (true)
+            {
+                if (i > j)
+                {
+                    return true;
+                }
+                char a = value[i];
+                char b = value[j];
+                if (char.ToLower(a) != char.ToLower(b))
+                {
+                    return false;
+                }
+                i++;
+                j--;
+            }
+        }
+    }
+}
